@@ -1,0 +1,23 @@
+export const scholarshipCases = [
+  { desc: "full scholarship - all thresholds met", average: 90, attendance: 95, credits: 15, disciplinaryAction: false, expected: "Full Scholarship" },
+  { desc: "full - above all thresholds", average: 95, attendance: 98, credits: 20, disciplinaryAction: false, expected: "Full Scholarship" },
+  { desc: "not full - average exactly 89", average: 89, attendance: 95, credits: 15, disciplinaryAction: false, expected: "Partial Scholarship" },
+  { desc: "not full - attendance exactly 94", average: 90, attendance: 94, credits: 15, disciplinaryAction: false, expected: "Partial Scholarship" },
+  { desc: "not full - credits exactly 14", average: 90, attendance: 95, credits: 14, disciplinaryAction: false, expected: "Partial Scholarship" },
+  { desc: "partial scholarship - all partial thresholds met", average: 80, attendance: 85, credits: 12, disciplinaryAction: false, expected: "Partial Scholarship" },
+  { desc: "partial - above partial thresholds", average: 85, attendance: 90, credits: 14, disciplinaryAction: false, expected: "Partial Scholarship" },
+  { desc: "not partial - average exactly 79", average: 79, attendance: 85, credits: 12, disciplinaryAction: false, expected: "Not Eligible" },
+  { desc: "not partial - attendance exactly 84", average: 80, attendance: 84, credits: 12, disciplinaryAction: false, expected: "Not Eligible" },
+  { desc: "not partial - credits exactly 11", average: 80, attendance: 85, credits: 11, disciplinaryAction: false, expected: "Not Eligible" },
+  { desc: "not eligible - all low", average: 60, attendance: 70, credits: 5, disciplinaryAction: false, expected: "Not Eligible" },
+  { desc: "not eligible - zero values", average: 0, attendance: 0, credits: 0, disciplinaryAction: false, expected: "Not Eligible" },
+  { desc: "rejected - disciplinary with full eligible stats", average: 95, attendance: 98, credits: 20, disciplinaryAction: true, expected: "Rejected" },
+  { desc: "rejected - disciplinary with partial eligible stats", average: 85, attendance: 90, credits: 14, disciplinaryAction: true, expected: "Rejected" },
+  { desc: "rejected - disciplinary overrides everything", average: 100, attendance: 100, credits: 100, disciplinaryAction: true, expected: "Rejected" },
+  { desc: "boundary: average 90, attendance 95, credits 15 exact", average: 90, attendance: 95, credits: 15, disciplinaryAction: false, expected: "Full Scholarship" },
+  { desc: "boundary: average 80, attendance 85, credits 12 exact", average: 80, attendance: 85, credits: 12, disciplinaryAction: false, expected: "Partial Scholarship" },
+  { desc: "single fail - low credits for partial", average: 90, attendance: 90, credits: 11, disciplinaryAction: false, expected: "Not Eligible" },
+  { desc: "single fail - low attendance for full", average: 92, attendance: 94, credits: 16, disciplinaryAction: false, expected: "Partial Scholarship" },
+  { desc: "single fail - low average for full", average: 89, attendance: 96, credits: 16, disciplinaryAction: false, expected: "Partial Scholarship" },
+];
+
